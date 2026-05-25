@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Run a simple command
+      run: |
+        echo "Hello from GitHub Actions in symmetrical-barnacle!"
+        echo "Repo is ready for automation 🚀"
+        ls -la
